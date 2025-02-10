@@ -80,6 +80,21 @@ Start the server using:
 ```bash
 node server.js
 ```
+## Features of the Application
+This application is an Asset Management System that allows users to manage asset records efficiently. Below are the key features of the application:
+
+- **MongoDB Database Integration:**
+  - Stores asset information, including name, type, department, quantity, and value.
+- **Asset Management:**
+  - Ability to add new assets, view all existing assets, and delete assets when necessary.
+- **Dashboard Interface:**
+  - Static dashboard file served for user interaction.
+- **Error Handling:**
+  - Proper error handling for database operations and request validation.
+- **Middleware:**
+  - Parses JSON request bodies and serves static files.
+- **Explicit MongoDB Collection Name:**
+  - Assets are stored in the `assets` collection explicitly defined in the schema.
 
 
 
