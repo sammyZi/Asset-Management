@@ -1,6 +1,7 @@
 # Project Setup Guide
 
-Visit the live web application here: [Asset Management System]([https://feane-online-food-ordering-site.vercel.app/index.html](https://assetmanager-one.vercel.app/index.html))
+Visit the live web application here: [Asset Management System](https://assetmanager-one.vercel.app/index.html)
+
 ---
 
 ## Prerequisites
