@@ -1,0 +1,85 @@
+# Project Setup Guide
+
+## Prerequisites
+Make sure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (v12 or higher recommended)
+- [MongoDB](https://www.mongodb.com/try/download/community) (Ensure MongoDB is running locally or use a cloud MongoDB service like MongoDB Atlas)
+
+## Installation Instructions
+
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd <project-folder>
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### Required Packages
+
+The following dependencies will be installed:
+
+- **express:** Web framework for Node.js
+- **body-parser:** Middleware to parse incoming request bodies
+- **mongoose:** MongoDB object modeling tool
+- **morgan:** HTTP request logger middleware
+
+To install these individually, use the following commands:
+
+```bash
+npm install express
+npm install body-parser
+npm install mongoose
+npm install morgan
+```
+
+### 3. Start the Server
+```bash
+node server.js
+```
+
+If your main file is named differently (e.g., `app.js`), use:
+```bash
+node app.js
+```
+
+### 4. Verify the Application
+- Open your browser and navigate to [http://localhost:8000](http://localhost:8000).
+- Ensure MongoDB is running if you're using a local MongoDB setup.
+
+## Project Structure
+```plaintext
+.
+├── server.js (or app.js)
+├── package.json
+├── README.md
+└── node_modules/
+```
+
+## Troubleshooting
+
+- **Port Issues:** If port 8000 is already in use, change the port in the code.
+- **MongoDB Connection:** Verify MongoDB service is running by using the command:
+  ```bash
+  mongod
+  ```
+- **Dependency Errors:** Ensure all packages are installed using `npm install`.
+
+## Additional Commands
+
+### Development Mode
+Install `nodemon` for automatic server restarts during development:
+```bash
+npm install --save-dev nodemon
+```
+Start the server using:
+```bash
+node server.js
+```
+
+
+
