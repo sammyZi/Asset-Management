@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Items</title>
+  <link rel="stylesheet" href="manage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="flex h-screen bg-gray-50">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="p-4">
+          <!-- Logo Section -->
+          <div class="logo-section">
+            <img src="path-to-logo.png" alt="Company Logo" class="company-logo">
+          </div>
+      
+          <!-- Navigation Menu -->
+          <nav class="space-y-1">
+            <div class="nav-item">
+              <a href="index.html">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Asset Dashboard</span>
+              </a>
+            </div>
+            <div class="nav-item">
+              <a href="add.html">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add New Items</span>
+              </a>
+            </div>
+            <div class="nav-item">
+              <a href="view.html">
+                <i class="fas fa-eye"></i>
+                <span>View Items</span>
+              </a>
+            </div>
+            <div class="nav-item">
+              <a href="assign.html">
+                <i class="fas fa-share-alt"></i>
+                <span>Assign Items</span>
+              </a>
+            </div>
+            <div class="nav-item active">
+              <i class="fas fa-exchange-alt"></i>
+              <span>Issued/Return Items</span>
+            </div>
+            <div class="nav-item">
+              <a href="damaged.html">
+                <i class="fas fa-tools"></i>
+                <span>Damaged Items</span>
+              </a>
+            </div>
+            <div class="nav-item">
+              <a href="employees.html">
+                <i class="fas fa-users"></i>
+                <span>Employees</span>
+              </a>
+            </div>
+            <div class="nav-item">
+              <a href="history.html">
+                <i class="fas fa-history"></i>
+                <span>History</span>
+              </a>
+            </div>
+            
+            <div class="nav-item">
+              <a href="help.html">
+                <i class="fas fa-question-circle"></i>
+                <span>Help</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header class="header">
+        <div class="header-inner">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="    Search items...">
+            <img class="search-icon" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/>
+          </div>
+          
+          <div class="profile-pic"></div>
+        </div>
+      </header>
+      <main class="content">
+        <!-- Sorting Dropdown -->
+        <div class="sort-options">
+          <label for="sort-by">Sort By: </label>
+          <select id="sort-by" onchange="sortTable()">
+            <option value="sr">Serial Number</option>
+            <option value="name">Name</option>
+            <option value="category">Category</option>
+            <option value="date">Date Assigned</option>
+          </select>          
+        </div>
+    
+        <!-- Table -->
+        <table id="item-table">
+            <thead>
+              <tr>
+                <th>SR</th>
+                <th class="name-column">Name</th>
+                <th>Category</th>
+                <th>Assigned To</th>
+                <th>Date Assigned</th>
+                <th>Return Date</th>
+                <th>Action</th> <!-- Add an Action column for the Return button -->
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Data will be inserted dynamically here -->
+            </tbody>
+          </table>
+          
+ 
+        
+        <div id="pagination" class="pagination">
+          <button id="prev-btn" disabled>Previous</button>
+          <span id="page-info"></span>
+          <button id="next-btn">Next</button>
+        </div>
+
+<!-- Popup HTML (hidden by default) -->
+<div id="return-popup" class="popup hidden">
+  <div class="popup-content">
+    <h2>Return Item</h2>
+    <label for="return-date">Select Return Date:</label>
+    <input type="date" id="return-date" required>
+    <div class="modal-actions">
+      <button id="confirm-return-btn" class="confirm-btn">Confirm Return</button>
+      <button id="close-popup-btn" class="cancel-btn">Close</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+      </main>
+    
+      <script type="module" src="manage.js"></script>
+
+    </div>
+  </div>
+</body>
+</html>

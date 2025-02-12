@@ -1,0 +1,518 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Poppins font for modern, clean look */
+  color: #333;
+  background-color: #ffffff;
+  display: flex;
+  height: 100vh;
+  flex-direction: column; /* Stack the header and content */
+  line-height: 1.6; /* Improve readability */
+}
+
+  
+  .flex {
+    display: flex;
+  }
+  
+  .h-screen {
+    height: 100vh;
+  }
+  
+  .bg-gray-50 {
+    background-color: #f9fafb;
+  }
+  
+ /* Sidebar Styling */
+ .sidebar {
+  min-width:250px;
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+  
+  /* Navigation Item Styles */
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0); /* Transparent by default */
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+  }
+  
+  .nav-item i {
+    font-size: 1.25rem; /* Icon size */
+    color: #ffffff; /* Pastel green for icons */
+  }
+  
+  .nav-item:hover {
+    background: #81b29a; /* Green background on hover */
+    color: white;
+  }
+  
+  .nav-item.active {
+    background: #e07a5f; /* Red background for active item */
+    color: white;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .nav-item a:hover {
+    color: inherit;
+  }
+  
+  .nav-item span {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  
+  
+  /* Main Content Styling */
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .header {
+    background-color: #f3f4f6;
+    padding: 1rem;
+  }
+  
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-box {
+    width: 300px;
+    position: relative;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px; /* Position the icon inside the input box */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the icon */
+    width: 20px; /* Adjust size of the icon */
+    height: 20px;
+    pointer-events: none; /* Ensures the icon doesn't interfere with input */
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 35px; /* Create space for the icon */
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem; /* Ensures the text is visible */
+  }
+  
+  .search-input:focus {
+    border-color: #2563eb; /* Highlight border color on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.5); /* Subtle glow effect */
+  }
+  
+  
+  
+  .notification-btn,
+  .profile-pic {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #9ca3af;
+    border-radius: 50%;
+  }
+  
+
+  
+  /* Content Styling */
+  .content {
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+ /* Container to make the table scrollable */
+.table-container {
+  width: 100%; /* Adjust the width of the container */
+  height: 300px; /* Set a fixed height for the table container */
+  overflow-y: auto; /* Allow vertical scrolling inside the container */
+  overflow-x: auto; /* Allow horizontal scrolling for table content */
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+/* Styling for the table */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  table-layout: fixed; /* Fixed column width */
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis for truncated text */
+}
+
+th {
+  background-color: #d9eafc;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+th:first-child {
+  border-top-left-radius: 0.5rem;
+}
+
+th:last-child {
+  border-top-right-radius: 0.5rem;
+}
+
+td {
+  color: #374151;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 0.5rem;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+  td:last-child, th:last-child {
+    width: 65px; /* Set a small width for the last column */
+  }
+  
+
+
+  .sort-options {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .sort-options label {
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .sort-options select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .sort-options select:hover {
+    background-color: #e0e0e0;
+  }
+  
+  
+
+  /* Logo Section */
+.logo-section {
+  text-align: center; /* Center the logo */
+  margin-bottom: 2rem; /* Add space below the logo */
+}
+
+.company-logo {
+  max-width: 80%; /* Adjust size based on sidebar width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Make logo corners rounded */
+}
+
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: fixed; /* Fix the position of pagination */
+  bottom: 20px; /* Adjust this value to control the distance from the bottom of the screen */
+  left: 58%;
+  transform: translateX(-50%); /* Center the pagination horizontally */
+  z-index: 10; /* Keeps pagination above other content */
+  padding: 0.5rem 1rem; /* Add some padding around the buttons */
+  border-radius: 5px; /* Optional: adds rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for better visibility */
+  
+}
+
+/* Hide pagination when needed */
+.pagination.hide-pagination {
+  visibility: hidden;
+  opacity: 0; /* Fade it out */
+}
+
+/* Pagination button styles */
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-weight: bold;
+}
+
+.pagination button:hover {
+  background: #81b29a; 
+  color: white;
+}
+
+
+/* Hide the pagination when the popup is open */
+.hide-pagination {
+  display: none; /* Hide the pagination */
+}
+
+/* Example of hidden popup */
+.hidden {
+  display: none;
+}
+
+.info-column {
+  text-align: center;
+}
+
+.info-column .fa-info-circle {
+  font-size: 1.2rem;
+  color: #007bff; /* Blue */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.info-column .fa-info-circle:hover {
+  color: #0056b3; /* Darker Blue */
+}
+
+
+
+/* Hide the popup by default */
+.popup.hidden {
+  display: none;
+}
+
+/* Style for the popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Darker overlay for more focus */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px); /* Blur the background for a modern effect */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for fade-in/out */
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px; /* Rounded corners */
+  width: 450px; /* Width for the popup box */
+  max-height: 80vh; /* Limit the height to 80% of the viewport */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Shadow for floating effect */
+  position: relative;
+  overflow-y: auto; /* Enable vertical scroll if content exceeds height */
+  overflow-wrap: break-word; /* Break long words */
+  word-wrap: break-word; /* Break long words (fallback) */
+  line-height: 1.5; /* Line height for readability */
+  text-align: left; /* Align text to the left */
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #2c3e50; /* Soft pink color for the close button */
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #393738; /* Slightly darker pink on hover */
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.popup h2 {
+  margin-top: 0;
+  font-size: 1.6rem; /* Larger and bolder heading for emphasis */
+  font-weight: 700;
+  color: #2f2f2f; /* Darker color for the heading for better contrast */
+  letter-spacing: 1px; /* Slightly spaced out letters for a modern look */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+ul li {
+  margin: 12px 0; /* Add more space between list items */
+  font-size: 1.1rem; /* Slightly larger font size for readability */
+  color: #666; /* Lighter text color for list items */
+  transition: color 0.3s ease;
+}
+
+ul li:hover {
+  color: #333; /* Darken text color on hover for better interactivity */
+}
+
+ul li:last-child {
+  margin-bottom: 0; /* Remove margin from the last item */
+}
+
+ .delete-btn {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+ .delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* General popup styling */
+.popup, .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup-content, .modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal-actions {
+  margin-top: 15px;
+}
+
+.confirm-btn, .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.confirm-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background-color: #c0392b;
+}
+
+.cancel-btn {
+  background-color: #7f8c8d;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #636e72;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+
+/* Global Scrollbar Styling for the Entire Page */
+body::-webkit-scrollbar {
+  width: 10px; /* Adjust scrollbar width for the page */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f5f5f5; /* Light gray background for the scrollbar track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #c4c4c4; /* Gray color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded thumb */
+  border: 2px solid #f5f5f5; /* Space around the thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #9e9e9e; /* Darker color for the thumb on hover */
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employees</title>
+  <link rel="stylesheet" href="damaged.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="p-4">
+        <div class="logo-section">
+          <img src="path-to-logo.png" alt="Company Logo" class="company-logo">
+        </div>
+        <nav class="space-y-1">
+          <div class="nav-item"><a href="index.html"><i class="fas fa-tachometer-alt"></i><span>Asset
+                Dashboard</span></a></div>
+          <div class="nav-item"><a href="add.html"><i class="fas fa-plus-circle"></i><span>Add New Items</span></a>
+          </div>
+          <div class="nav-item"><a href="view.html"><i class="fas fa-eye"></i><span>View Items</span></a></div>
+          <div class="nav-item"><a href="assign.html"><i class="fas fa-share-alt"></i><span>Assign Items</span></a>
+          </div>
+          <div class="nav-item"><a href="manage.html"><i class="fas fa-exchange-alt"></i><span>Issued/Return Items</span></a></div>
+          <div class="nav-item  active"><a href="damaged.html"><i class="fas fa-tools"></i><span>Damaged
+                Items</span></a></div>
+          <div class="nav-item"><a href="employees.html"><i class="fas fa-users"></i><span>Employees</span></a>
+          </div>
+          <div class="nav-item"><a href="history.html"><i class="fas fa-history"></i><span>History</span></a></div>
+          <div class="nav-item"><a href="help.html"><i class="fas fa-question-circle"></i><span>Help</span></a></div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header class="header">
+        <div class="header-inner">
+          <div class=""></div>
+          <div class="profile-pic"></div>
+        </div>
+      </header>
+      <main class="content">
+        <!-- Employee Form -->
+        <form id="damageForm" class="add-damage-form" action="/add-damage" method="POST">
+          <div class="form-group">
+            <label for="itemName">Damage Name</label>
+            <input type="text" id="itemName" name="itemName" placeholder="Enter Damage name" required>
+          </div>
+          <div class="form-group">
+            <label for="serialNo">Serial No.</label>
+            <input type="text" id="serialNo" name="serialNo" placeholder="Enter serial number" required>
+          </div>
+          <div class="form-group">
+            <label for="damageType">Damage Type</label>
+            <input type="text" id="damageType" name="damageType" placeholder="Enter damage type" required>
+          </div>
+          <div class="form-group">
+            <label for="damageDate">Date</label>
+            <input type="date" id="damageDate" name="damageDate" required>
+          </div>
+          <div class="form-group">
+            <label for="warrantyStatus">Warranty</label>
+            <select id="warrantyStatus" name="warrantyStatus" required>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Add Damage</button>
+          </div>
+        </form>
+        
+
+        <!-- Search Bar) -->
+        <div class="search-box">
+          <button>
+            <i class="fas fa-search"></i>
+          </button>
+          <input type="text" placeholder="Search Damaged Item...">
+        </div>
+            <!-- damaged Cards Section -->
+            <div class="damage-cards" id="damage-cards-container">
+              <!-- damaged cards will be injected here -->
+           </div>
+      </main>
+    </div>
+  </div>
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+<!-- Confirmation Modal -->
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModalBtn">&times;</span>
+    <p>Are you sure you want to delete this Damaged Item?</p>
+    <button id="confirmDeleteBtn">Yes, Delete</button>
+    <button id="cancelDeleteBtn">Cancel</button>
+  </div>
+</div>
+
+  <script src="damage.js"></script>
+</body>
+
+</html>
