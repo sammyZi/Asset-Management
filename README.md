@@ -72,8 +72,8 @@ node app.js
 
 ## Additional Commands
 
-### Development Mode
-Install `nodemon` for automatic server restarts during development (Optional):
+### Development Mode (Optional)
+Install `nodemon` for automatic server restarts during development:
 ```bash
 npm install --save-dev nodemon
 ```
