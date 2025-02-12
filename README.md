@@ -14,8 +14,8 @@ Make sure you have the following installed on your system:
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd <project-folder>
+git clone https://github.com/sammyZi/Asset-Management.git
+cd Asset-Management
 ```
 
 ### 2. Install Dependencies
