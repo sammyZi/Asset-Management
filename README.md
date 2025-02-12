@@ -19,9 +19,6 @@ cd Asset-Management
 ```
 
 ### 2. Install Dependencies
-```bash
-npm install
-```
 
 ### Required Packages
 
